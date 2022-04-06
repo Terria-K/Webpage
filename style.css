@@ -11,7 +11,7 @@
     width: 100;
     height: 100vh;
     background-image: 
-        linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), 
+        linear-gradient(rgba(41, 33, 84, 0.75), rgba(41, 33, 84, 0.75)), 
         url(assets/banner.jpeg);
     background-size: cover;
     background-position: center;
@@ -89,10 +89,9 @@ footer {
 
 .content {
     width: 100%;
-    margin-top: 40px;
+    margin-top: 150px;
     height: auto;
     position: relative;
-    /* transform: translateY(-50%); */
     text-align: center;
     color: #fff;
 }
@@ -141,4 +140,49 @@ footer {
 
 .content button:hover {
     border: none;
+}
+
+.downbar {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.card {
+    position: relative;
+    width: 300px;
+    height: 430px;
+    border: 4px solid green;
+    margin: 20px;
+    
+}
+
+.card-image {
+    background-image: url(assets/unknown.png);
+    height: 160px;
+}
+
+.card-text {
+    color: #22236b;
+    position: relative;
+    width: 100%;
+    height: 50px;
+    text-align: center;
+    font-weight: 550;
+    font-size: 20px;
+}
+
+.card-separator {
+    width: 100%;
+    height: 20px;
+    background-color: red;
+    position: relative;
+}
+
+.card-text p1 {
+    color: black;
+    text-align: left;
+    font-size: 17px;
+    font-weight: 300;
 }
