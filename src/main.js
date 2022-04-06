@@ -1,10 +1,11 @@
+// Pede ninyong ibahin itong title kung may naisip kayo, nasa correct order ito.
 const cardTextTile = [
     "Online Student Enrollment System and Payment System",
     "Second Title",
     "Third Title"
 ];
 
-
+// Pede ninyong ibahin itong description kung may naisip kayo, nasa correct order ito.
 const cardTextDescription = [
     "First Description",
     "Second Description",
@@ -12,7 +13,7 @@ const cardTextDescription = [
 ]
 
 
-
+// Huwag ninyo tong pakialamin
 const arrayOfCards = [];
 
 function main() {
