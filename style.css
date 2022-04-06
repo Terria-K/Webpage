@@ -1,6 +1,9 @@
 *{
     margin: 0;
     padding: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: none;
     font-family: sans-serif;
 }
 
@@ -14,10 +17,23 @@
     background-position: center;
 }
 
+
+.banner nav {
+    background: #fff;
+    height: 80px;
+    width: 100%;
+}
+
+footer {
+    background: #fff;
+    height: 300px;
+    width: 100%;
+}
+
 .navbar {
-    width: 85%;
+    width: 90%;
     margin: auto;
-    padding: 35px 0;
+    padding: 20px 0;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -37,7 +53,6 @@
 
 .navbar ul li a {
     text-decoration: none;
-    color: #fff;
     text-transform: uppercase;
 }
 
@@ -48,12 +63,23 @@
     background: #5356e8;
     position: absolute;
     left: 0;
-    bottom: -10px;
+    bottom: -15px;
     transition: 0.5s;
 }
 
 .navbar ul li:hover::after {
     width: 100%;
+}
+
+.facebook input {
+    width: 30px;
+    height: 30px;
+    background: transparent;
+    border: none;
+    background-image: url(assets/facebook.webp);
+    background-size: 30px;
+    background-position: center;
+    position: relative;
 }
 
 .content {
@@ -76,7 +102,7 @@
     line-height: 25px;
 }
 
-button {
+.content button {
     width: 200px;
     padding: 15px 0;
     text-align: center;
@@ -91,7 +117,7 @@ button {
     overflow: hidden;
 }
 
-span {
+.content span {
     background: #5356e8;
     height: 100%;
     width: 0;
@@ -103,10 +129,10 @@ span {
     transition: 0.5s;
 }
 
-button:hover span {
+.content button:hover span {
     width: 100%;
 }
 
-button:hover {
+.content button:hover {
     border: none;
 }
