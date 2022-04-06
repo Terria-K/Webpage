@@ -1,8 +1,9 @@
 const cardTextTile = [
-    "First Title",
+    "Online Student Enrollment System and Payment System",
     "Second Title",
     "Third Title"
 ];
+
 
 const cardTextDescription = [
     "First Description",
@@ -17,8 +18,7 @@ const arrayOfCards = [];
 function main() {
     const cardNode = document.getElementById("childcontainer");
     const container = document.getElementById("container");
-    const aclcButton = document.getElementById("0");
-    aclcButton.onclick = openACLC;
+    connectEvents();
 
     addCards(cardNode, false);
     addCards(cardNode);
@@ -32,6 +32,11 @@ function main() {
         cardTitleText.nodeValue = cardTextTile[i];
         cardDescText.nodeValue = cardTextDescription[i];
     }
+}
+
+function connectEvents() {
+    const aclcButton = document.getElementById("0");
+    aclcButton.onclick = openACLC;
 }
 
 function addCards(node, clone = true) {
