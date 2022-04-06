@@ -74,6 +74,7 @@ footer {
 
 .navbar ul li:hover::after {
     width: 100%;
+    background: #5cd4ec;
 }
 
 .facebook input {
@@ -120,6 +121,7 @@ footer {
     cursor: pointer;
     position: relative;
     overflow: hidden;
+    transition: 0.3s;
 }
 
 .content span {
@@ -139,7 +141,8 @@ footer {
 }
 
 .content button:hover {
-    border: none;
+    background: #4894ba;
+    border: 2px solid #4894ba;
 }
 
 .grid-container {

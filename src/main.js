@@ -10,11 +10,12 @@ const cardTextDescription = [
     "First Description",
     "Second Description",
     "Third Description"
-]
+]   
 
 
 // Huwag ninyo tong pakialamin
 const arrayOfCards = [];
+
 
 function main() {
     const cardNode = document.getElementById("childcontainer");
