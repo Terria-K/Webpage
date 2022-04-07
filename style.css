@@ -4,7 +4,7 @@
     text-decoration: none;
     list-style: none;
     box-sizing: none;
-    font-family: sans-serif;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .banner {
@@ -156,7 +156,7 @@ footer {
     position: relative;
     width: 300px;
     height: 430px;
-    border: 1px solid rgb(0, 0, 0);
+    border: 1px solid rgb(153, 153, 153);
     margin: 20px;
     border-radius: 15px 15px 10px 10px;
     

@@ -1,21 +1,5 @@
-// Pede ninyong ibahin itong title kung may naisip kayo, nasa correct order ito.
-const cardTextTile = [
-    "Online Student Enrollment System and Payment System",
-    "Second Title",
-    "Third Title"
-];
-
-// Pede ninyong ibahin itong description kung may naisip kayo, nasa correct order ito.
-const cardTextDescription = [
-    "First Description",
-    "Second Description",
-    "Third Description"
-]   
-
-
 // Huwag ninyo tong pakialamin
 const arrayOfCards = [];
-
 
 function main() {
     const cardNode = document.getElementById("childcontainer");
@@ -31,8 +15,8 @@ function main() {
         let text = arrayOfCards[i].childNodes[3];
         let cardTitleText = text.childNodes[0];
         let cardDescText = text.childNodes[3].childNodes[1];
-        cardTitleText.nodeValue = cardTextTile[i];
-        cardDescText.nodeValue = cardTextDescription[i];
+        cardTitleText.nodeValue = cards[i].getTitle();
+        cardDescText.nodeValue = cards[i].getDescription();
     }
 }
 
