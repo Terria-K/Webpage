@@ -19,9 +19,10 @@
 
 
 .banner nav {
-    background: rgb(227, 229, 246);
     height: 80px;
     width: 100%;
+    background-color: rgba(227, 229, 246, 0.5);
+    backdrop-filter: blur(4px);
 }
 
 footer {
@@ -59,6 +60,7 @@ footer {
 .navbar ul li a {
     text-decoration: none;
     text-transform: uppercase;
+    color: rgb(30, 37, 110);
 }
 
 .navbar ul li::after {
