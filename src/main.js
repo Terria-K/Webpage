@@ -47,5 +47,12 @@ function loginForm(active) {
 }
 
 
+window.addEventListener('scroll', () => {
+    var scroll =  window.pageYOffset,
+    blur_val = (scroll / 200);
+
+    document.getElementById('ban').style.filter = "blur("+blur_val+"px)"
+})
+
 main();
 

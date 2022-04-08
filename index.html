@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
-    <div class="banner">
+    <div class="banner" id="ban">
         <nav>
             <div class="navbar">
                 <img src="assets/logo.png" class="logo">
@@ -33,28 +33,28 @@
                 <button type="button"><span></span>Pre-Register</button>
             </div>
         </div>
-        <div class="loginform" id="log">
-        <img src="assets/avatar.webp" class="avatar"/>
-            <div class="exit">
-                <button onclick="loginForm(false)">x</button>
-            </div>
-            <h1>Login Here</h1>
-            <form>
-                <p>Username</p>
-                <input type="text" name="" placeholder="Enter Username"/>
-                <p>Password</p>
-                <input type="password" name="" placeholder="Enter Password"/>
-                <input type="submit" name="" value="Login"/>
-                <ul>
-                    <li>
-                        <a href="#">Forgot Password?</a><br/>
-                    </li>
-                    <li>
-                        <a href="#">Don't have an account?</a>
-                    </li>
-                </ul>
-            </form>
+    </div>
+    <div class="loginform" id="log">
+    <img src="assets/avatar.webp" class="avatar"/>
+        <div class="exit">
+            <button onclick="loginForm(false)">x</button>
         </div>
+        <h1>Login Here</h1>
+        <form>
+            <p>Username</p>
+            <input type="text" name="" placeholder="Enter Username"/>
+            <p>Password</p>
+            <input type="password" name="" placeholder="Enter Password"/>
+            <input type="submit" name="" value="Login"/>
+            <ul>
+                <li>
+                    <a href="#">Forgot Password?</a><br/>
+                </li>
+                <li>
+                    <a href="#">Don't have an account?</a>
+                </li>
+            </ul>
+        </form>
     </div>
     <footer>
         <div class="grid-container" id="container">

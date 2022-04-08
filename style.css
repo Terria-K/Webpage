@@ -7,93 +7,6 @@
     font-family: sans-serif;
 }
 
-.loginform {
-    display: none;
-    width: 320px;
-    height: 420px;
-    background: #000;
-    color: #fff;
-    top: 50%;
-    left: 50%;
-    position: absolute;
-    transform: translate(-50%, -50%);
-    box-sizing: border-box;
-    padding: 50px 35px;
-}
-
-.exit {
-    text-align: right;
-}
-
-.exit button {
-    cursor: pointer;
-    background: transparent;
-    color: #fff;
-    border: none;
-}
-
-.avatar {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    position: absolute;
-    top: -50px;
-    left: calc(50% - 50px);
-}
-.loginform h1 {
-    margin: 10px 20px;
-    padding: 0 0 20px;
-    text-align: center;
-    font-size: 22px;
-}
-
-.loginform p {
-    margin: 0;
-    padding: 0;
-    font-weight: bold;
-}
-
-.loginform input {
-    color: #fff;
-    width: 100px;
-    margin-bottom: 20px;
-}
-
-.loginform input[type="text"], input[type="password"] {
-    border: none;
-    border-bottom: 1px solid #fff;
-    background: transparent;
-    outline: none;
-    height: 40px;
-    width: 100%;
-}
-
-.loginform input[type="submit"] {
-    border: none;
-    outline: none;
-    height: 40px;
-    background: #fb2525;
-    color: #fff;
-    font-size: 18px;
-    border-radius: 20px;
-}
-
-.loginform input[type="submit"]:hover {    
-    cursor: pointer;
-    background: #ffc107;
-    color: #000;
-}
-
-.loginform a {
-    text-decoration: none;
-    font-size: 12px;
-    line-height: 20px;
-    color: darkgray;
-}
-
-.loginform a:hover {
-    color: #ffc107;
-}
  
 .banner {
     width: 100;
@@ -171,6 +84,95 @@
     background-position: center;
     position: relative;
     cursor: pointer;
+}
+
+.loginform {
+    display: none;
+    width: 320px;
+    height: 420px;
+    background: #000;
+    color: #fff;
+    top: 50%;
+    left: 50%;
+    position: fixed;
+    transform: translate(-50%, -50%);
+    box-sizing: border-box;
+    padding: 50px 35px;
+    z-index: 9;
+}
+
+.exit {
+    text-align: right;
+}
+
+.exit button {
+    cursor: pointer;
+    background: transparent;
+    color: #fff;
+    border: none;
+}
+
+.avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    position: absolute;
+    top: -50px;
+    left: calc(50% - 50px);
+}
+.loginform h1 {
+    margin: 10px 20px;
+    padding: 0 0 20px;
+    text-align: center;
+    font-size: 22px;
+}
+
+.loginform p {
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+}
+
+.loginform input {
+    color: #fff;
+    width: 100px;
+    margin-bottom: 20px;
+}
+
+.loginform input[type="text"], input[type="password"] {
+    border: none;
+    border-bottom: 1px solid #fff;
+    background: transparent;
+    outline: none;
+    height: 40px;
+    width: 100%;
+}
+
+.loginform input[type="submit"] {
+    border: none;
+    outline: none;
+    height: 40px;
+    background: #fb2525;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 20px;
+}
+
+.loginform input[type="submit"]:hover {    
+    cursor: pointer;
+    background: #ffc107;
+    color: #000;
+}
+
+.loginform a {
+    text-decoration: none;
+    font-size: 12px;
+    line-height: 20px;
+    color: darkgray;
+}
+
+.loginform a:hover {
+    color: #ffc107;
 }
 
 .content {
@@ -267,14 +269,12 @@ footer {
     height: 430px;
     border: 1px solid rgb(153, 153, 153);
     margin: 20px;
-    border-radius: 15px 15px 10px 10px;
     
 }
 
 .card-image {
     background-image: url(assets/unknown.png);
     height: 160px;
-    border-radius: 15px 15px 0px 0px;
 }
 
 .card-text {
