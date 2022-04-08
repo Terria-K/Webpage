@@ -106,7 +106,7 @@
 
 @keyframes entry {
     from {
-        margin: 50px 10px;
+        margin: 21px 10px;
         border: 2px solid #5356e800;
         color: rgba(255, 255, 255, 0)
     }
@@ -233,4 +233,21 @@ footer {
     margin: 40px;
     text-align: center;
     color: rgb(74, 74, 74);
+}
+
+@keyframes text {
+    from {
+        margin: 30px 10px;
+        color: rgba(255, 255, 255, 0)
+    }
+    to {
+        margin: 20px 10px;
+        color: rgb(255, 255, 255)
+    }
+}
+
+#textfade {
+    animation-name: text;
+    animation-duration: 0.8s;
+    animation-timing-function: ease-in-out;
 }
