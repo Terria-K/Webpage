@@ -5,6 +5,7 @@ const content = document.getElementById("content-id")
 function main() {
     addHoverScroller('contact', 'contactdest');
     addHoverScroller('home', 'homedest');
+    addHoverScroller('homelogo', 'homedest');
     const cardNode = document.getElementById("childcontainer");
     const container = document.getElementById("container");    
     connectEvents();
