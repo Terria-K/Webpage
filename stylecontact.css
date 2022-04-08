@@ -18,3 +18,36 @@
     list-style: none;
     display: block;
 }
+
+#facebook {
+    margin: -5px 2px;
+    display: inline-flex;
+    width: 30px;
+    height: 30px;
+    background-image: url("./assets/facebook.webp");
+    position: relative;
+    background-size: 30px;
+    background-position: left;
+}
+
+#mobile {
+    margin: -5px 2px;
+    display: inline-flex;
+    width: 30px;
+    height: 30px;
+    background-image: url("./assets/mobileicon.png");
+    position: relative;
+    background-size: 30px;
+    background-position: left;
+}
+
+#telephone {
+    margin: -5px 2px;
+    display: inline-flex;
+    width: 30px;
+    height: 30px;
+    background-image: url("./assets/telephone.png");
+    position: relative;
+    background-size: 30px;
+    background-position: left;
+}
