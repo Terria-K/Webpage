@@ -7,6 +7,7 @@
     <title>ACLC College</title>
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico"/>
     <link rel="stylesheet" href="style.css"/>
+    <link rel="stylesheet" href="stylecontact.css"/>
 </head>
 <body>
     <div class="banner" id="ban">
@@ -14,9 +15,9 @@
             <div class="navbar">
                 <img src="assets/logo.png" class="logo">
                 <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="pages/about.html">About</a></li>
-                    <li><a href="pages/contact.html">Contact</a></li>
+                    <li><p id="home">Home</p></li>
+                    <li><p id="about">About</p></li>
+                    <li><p id="contact">Contact</p></li>
                     <li>
                         <div class="facebook">
                             <input type="button" id="0"><span></span></input>
@@ -35,27 +36,27 @@
         </div>
     </div>
     <div class="loginform" id="log">
-    <img src="assets/avatar.webp" class="avatar"/>
-        <div class="exit">
-            <button onclick="loginForm(false)">x</button>
+        <img src="assets/avatar.webp" class="avatar"/>
+            <div class="exit">
+                <button onclick="loginForm(false)">x</button>
+            </div>
+            <h1>Login Here</h1>
+            <form>
+                <p>Username</p>
+                <input type="text" name="" placeholder="Enter Username"/>
+                <p>Password</p>
+                <input type="password" name="" placeholder="Enter Password"/>
+                <input type="submit" name="" value="Login"/>
+                <ul>
+                    <li>
+                        <a href="#">Forgot Password?</a><br/>
+                    </li>
+                    <li>
+                        <a href="#">Don't have an account?</a>
+                    </li>
+                </ul>
+            </form>
         </div>
-        <h1>Login Here</h1>
-        <form>
-            <p>Username</p>
-            <input type="text" name="" placeholder="Enter Username"/>
-            <p>Password</p>
-            <input type="password" name="" placeholder="Enter Password"/>
-            <input type="submit" name="" value="Login"/>
-            <ul>
-                <li>
-                    <a href="#">Forgot Password?</a><br/>
-                </li>
-                <li>
-                    <a href="#">Don't have an account?</a>
-                </li>
-            </ul>
-        </form>
-    </div>
     <footer>
         <div class="grid-container" id="container">
             <div class="card" id="childcontainer">
@@ -66,8 +67,17 @@
                 </div>
             </div>
         </div>
+        <div class="textcontainer" id="contactdest">
+            <p>Contacts</p>
+            <ul>
+                <li><a href="https://www.facebook.com/ACLCMalolosOfficial"><div id="facebook"></div>
+                    ACLC College of Malolos</a></li>
+                <li><div id="mobile"></div>0917-542-6205</li>
+                <li><div id="telephone"></div>796-2205</li>
+            </ul>
+        </div>
         <div class="end">
-            
+
         </div>
         <div class="trademark">
             <p id="copyright">Copyrights @ ACLC College - 2 Year Courses in the Philippines - By Digital Marketing Team</p>

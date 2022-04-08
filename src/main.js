@@ -46,6 +46,10 @@ function loginForm(active) {
     x.style.display = 'none';
 }
 
+document.getElementById('contact').addEventListener('click', () => {
+    document.getElementById('contactdest').scrollIntoView({ behavior: 'smooth'})
+})
+
 
 window.addEventListener('scroll', () => {
     var scroll =  window.pageYOffset,
