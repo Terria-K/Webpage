@@ -1,17 +1,17 @@
 .textcontainer {
-    border-radius: 2%;
+    border-radius: 4%;
     margin: 30px;
-    width: 840px;
-    height: 60vh;
+    width: 720px;
+    height: 55vh;
     background-color: rgba(44, 39, 107, 0.3);    
     color: white;
     font-weight: bold;
-    font-size: 25px;
+    font-size: 30px;
 }
 
 .textcontainer li {
     position: relative;
-    margin: 10px 35px;
+    margin: 50px 80px;
     padding-top: 15px;
     font-size: 20px;
     font-weight: 550;

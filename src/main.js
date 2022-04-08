@@ -37,5 +37,15 @@ function refreshText() {
     }
 }
 
+function loginForm(active) {
+    var x = document.getElementById('log');
+    if (active) {
+        x.style.display = 'block';
+        return;
+    }
+    x.style.display = 'none';
+}
+
+
 main();
 
