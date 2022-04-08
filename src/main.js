@@ -1,10 +1,10 @@
 // Huwag ninyo tong pakialamin
 const arrayOfCards = [];
+const content = document.getElementById("content-id")
 
 function main() {
     const cardNode = document.getElementById("childcontainer");
-    const container = document.getElementById("container");
-    const content = document.getElementById("content-id")
+    const container = document.getElementById("container");    
     connectEvents();
 
     addCards(cardNode, false);
@@ -19,11 +19,7 @@ function main() {
         cardTitleText.nodeValue = cards[i].getTitle();
         cardDescText.nodeValue = cards[i].getDescription();
     }
-
-    for (var i = 0; i < randomText.length; i++) {
-        let contentChild = content.childNodes[3].childNodes[0];
-        contentChild.nodeValue = randomText[Math.floor(Math.random() * 3)];
-    }
+    refreshText();
 }
 
 function connectEvents() {
@@ -47,4 +43,12 @@ function openACLC ()  {
     openLink("https://www.facebook.com/ACLCMalolosOfficial");
 }
 
+function refreshText() {
+    for (var i = 0; i < randomText.length; i++) {
+        let contentChild = content.childNodes[3].childNodes[0];
+        contentChild.nodeValue = randomText[Math.floor(Math.random() * 3)];
+    }
+}
+
 main();
+

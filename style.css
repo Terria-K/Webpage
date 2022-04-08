@@ -25,12 +25,6 @@
     backdrop-filter: blur(4px);
 }
 
-footer {
-    background: #fff;
-    height: 300px;
-    width: 100%;
-}
-
 .navbar {
     width: 100%;
     height: 80px;
@@ -110,6 +104,19 @@ footer {
     line-height: 25px;
 }
 
+@keyframes entry {
+    from {
+        margin: 50px 10px;
+        border: 2px solid #5356e800;
+        color: rgba(255, 255, 255, 0)
+    }
+    to {
+        margin: 20px 10px;
+        border: 2px solid #5356e8;
+        color: rgb(255, 255, 255)
+    }
+}
+
 .content button {
     text-transform: uppercase;
     width: 200px;
@@ -125,6 +132,9 @@ footer {
     position: relative;
     overflow: hidden;
     transition: 0.3s;
+    animation-name: entry;
+    animation-duration: 1.2s;
+    animation-timing-function: cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
 .content span {
@@ -147,6 +157,13 @@ footer {
     background: #4894ba;
     border: 2px solid #4894ba;
 }
+
+footer {
+    background: #fff;
+    height: 300px;
+    width: 100%;
+}
+
 
 .grid-container {
     position: relative;
@@ -206,7 +223,8 @@ footer {
 
 .trademark {
     height: 100px;
-    position: relative;
+    width: 100%;
+    position: absolute;
     display: flex;
     background-color: rgb(32, 31, 31);    
 }
