@@ -22,25 +22,12 @@ function main() {
     refreshText();
 }
 
-function connectEvents() {
-    const aclcButton = document.getElementById("0");
-    aclcButton.onclick = openACLC;
-}
-
 function addCards(node, clone = true) {
     if (clone) {
         arrayOfCards.push(node.cloneNode(true));
         return;
     }
     arrayOfCards.push(node);
-}
-
-function openLink(url) {
-    window.open(url);
-}
-
-function openACLC ()  {
-    openLink("https://www.facebook.com/ACLCMalolosOfficial");
 }
 
 function refreshText() {
