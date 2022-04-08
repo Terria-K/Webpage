@@ -4,6 +4,7 @@ const arrayOfCards = [];
 function main() {
     const cardNode = document.getElementById("childcontainer");
     const container = document.getElementById("container");
+    const content = document.getElementById("content-id")
     connectEvents();
 
     addCards(cardNode, false);
@@ -17,6 +18,11 @@ function main() {
         let cardDescText = text.childNodes[3].childNodes[1];
         cardTitleText.nodeValue = cards[i].getTitle();
         cardDescText.nodeValue = cards[i].getDescription();
+    }
+
+    for (var i = 0; i < randomText.length; i++) {
+        let contentChild = content.childNodes[3].childNodes[0];
+        contentChild.nodeValue = randomText[Math.floor(Math.random() * 3)];
     }
 }
 
