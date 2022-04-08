@@ -3,6 +3,8 @@ const arrayOfCards = [];
 const content = document.getElementById("content-id")
 
 function main() {
+    addHoverScroller('contact', 'contactdest');
+    addHoverScroller('home', 'homedest');
     const cardNode = document.getElementById("childcontainer");
     const container = document.getElementById("container");    
     connectEvents();
@@ -46,17 +48,19 @@ function loginForm(active) {
     x.style.display = 'none';
 }
 
-document.getElementById('contact').addEventListener('click', () => {
-    document.getElementById('contactdest').scrollIntoView({ behavior: 'smooth'})
-})
-
 
 window.addEventListener('scroll', () => {
     var scroll =  window.pageYOffset,
     blur_val = (scroll / 200);
 
-    document.getElementById('ban').style.filter = "blur("+blur_val+"px)"
+    document.getElementById('homedest').style.filter = "blur("+blur_val+"px)"
 })
+
+function addHoverScroller(button, dest) {
+    document.getElementById(button).addEventListener('click', () => {
+        document.getElementById(dest).scrollIntoView({ behavior: 'smooth'})
+    })
+}
 
 main();
 
