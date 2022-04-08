@@ -19,6 +19,10 @@
     display: block;
 }
 
+.textcontainer li a {
+    color: white;
+}
+
 #facebook {
     margin: -5px 2px;
     display: inline-flex;
