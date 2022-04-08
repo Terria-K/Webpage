@@ -7,8 +7,9 @@ function main() {
     addHoverScroller('home', 'homedest');
     addHoverScroller('homelogo', 'homedest');
     const cardNode = document.getElementById("childcontainer");
-    const container = document.getElementById("container");    
+    const container = document.getElementById("container");
     connectEvents();
+    toggleButton();
 
     addCards(cardNode, false);
     addCards(cardNode);
@@ -23,6 +24,15 @@ function main() {
         cardDescText.nodeValue = cards[i].getDescription();
     }
     refreshText();
+}
+
+function toggleButton() {
+    const toggle = document.getElementsByClassName('togglebutton')[0];
+    const navbarLinks = document.getElementsByClassName('navbar-links')[0];
+
+    toggle.addEventListener('click', () => {
+        navbarLinks.classList.toggle('active');
+    });
 }
 
 function addCards(node, clone = true) {
