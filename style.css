@@ -9,6 +9,8 @@
 
  
 .banner {
+    position: relative;
+    margin-top: -150px;
     width: 100;
     height: 110vh;
     background-image: 
@@ -19,11 +21,14 @@
 }
 
 
-.banner nav {
+nav {
+    margin-top: 0px;
+    position: fixed;
     height: 80px;
     width: 100%;
     background-color: rgba(227, 229, 246, 0.5);
     backdrop-filter: blur(4px);
+    z-index: 9;
 }
 
 .navbar {
@@ -178,6 +183,7 @@
 
 .content {
     width: 100%;
+    padding-top: 230px;
     margin-top: 150px;
     height: auto;
     position: relative;
