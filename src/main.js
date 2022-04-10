@@ -23,6 +23,10 @@ function main() {
         let cardDescText = text.childNodes[3].childNodes[1];
         cardTitleText.nodeValue = cards[i].getTitle();
         cardDescText.nodeValue = cards[i].getDescription();
+        if (cards[i]['image'] === "null") 
+            continue;
+        arrayOfCards[i].childNodes[1].style.backgroundImage = "url(" + cards[i].getImage() + ")";
+        
     }
     refreshText();
 }

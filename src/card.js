@@ -2,6 +2,7 @@ class Card {
     constructor(attr) {
         this.name = attr['title'];
         this.description = attr['description'];
+        this.image = attr['image'];
     }
 
     getTitle() {
@@ -10,5 +11,9 @@ class Card {
 
     getDescription() {
         return this.description;
+    }
+
+    getImage() {
+        return this.image;
     }
 }
