@@ -2,13 +2,14 @@
 const arrayOfCards = [];
 const content = document.getElementById("content-id")
 
+
 function main() {
     addHoverScroller('contact', 'contactdest');
     addHoverScroller('home', 'homedest');
+    addHoverScroller('about', 'aboutdest');
     addHoverScroller('homelogo', 'homedest');
     const cardNode = document.getElementById("childcontainer");
     const container = document.getElementById("container");
-    connectEvents();
     toggleButton();
 
     addCards(cardNode, false);
@@ -60,12 +61,12 @@ function loginForm(active) {
 }
 
 
-window.addEventListener('scroll', () => {
-    var scroll =  window.pageYOffset,
-    blur_val = (scroll / 200);
+// window.addEventListener('scroll', () => {
+//     var scroll =  window.pageYOffset,
+//     blur_val = (scroll / 200);
 
-    document.getElementById('homedest').style.filter = "blur("+blur_val+"px)"
-})
+//     document.getElementById('homedest').style.filter = "blur("+blur_val+"px)"
+// })
 
 function addHoverScroller(button, dest) {
     document.getElementById(button).addEventListener('click', () => {
@@ -74,4 +75,3 @@ function addHoverScroller(button, dest) {
 }
 
 main();
-
