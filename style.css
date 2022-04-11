@@ -67,6 +67,7 @@
     justify-content: space-between;
     width: 30px;
     height: 21px;
+    cursor: pointer;
 }
 
 .togglebutton .bar {
@@ -201,14 +202,17 @@
     color: white;
     background-color: rgb(35, 35, 118);
     height: 600px;
+    position: relative;
 }
 
 .title {
     text-transform: uppercase;
-    position: relative;
+    position: absolute;
     text-align: center;
-    font-size: 40px;
-    margin: 30px 200px
+    color: white;
+    font-weight: bold;
+    font-size: 30px;
+    margin: 60px 44%
 }
 
 .content {
