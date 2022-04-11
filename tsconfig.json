@@ -7,8 +7,8 @@
         "removeComments": true,
         "preserveConstEnums": true,
         "outFile": "gen/aclc.js",
-        "sourceMap": true,
-        "target": "es6"
+        "target": "es6",
+        "strict": true
     },
     "include": ["src/**/*", "writeable/**/*", "main.ts"]
 }

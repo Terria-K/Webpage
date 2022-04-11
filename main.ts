@@ -1,71 +1,69 @@
 // Huwag ninyo tong pakialamin
 const arrayOfCards: HTMLElement[] = [];
-const content: HTMLElement = document.getElementById('content-id');
+const content: HTMLElement = getNodeByID('content-id');
+
+enum Destinations {
+    Contact = "Contact",
+    Home = "Home",
+    About = "About"
+}
 
 function main(): void {
-    const cardNode: HTMLElement = document.getElementById('childcontainer');
-    const container: HTMLElement = document.getElementById("container");
-    addHoverScroller('contact', 'contactdest');
-    addHoverScroller('home', 'homedest');
-    addHoverScroller('about', 'aboutdest');
-    addHoverScroller('homelogo', 'homedest');
+    
+    const cardNode: HTMLElement = getNodeByID('childcontainer');
+    const container: HTMLElement = getNodeByID('container');
+
+    addHoverScroller('contact', Destinations.Contact);
+    addHoverScroller('home', Destinations.Home);
+    addHoverScroller('about', Destinations.About);
+    addHoverScroller('homelogo', Destinations.Home);
     toggleButton();
 
     for (let i: number = 0; i < cards.length; i++) {
         addCards(cardNode);
         container.appendChild(arrayOfCards[i]);
-        let text: ChildNode = arrayOfCards[i].childNodes[3];
-        let cardTitleText: ChildNode = text.childNodes[0];
-        let cardDescText: ChildNode = text.childNodes[3].childNodes[1];
+        let text: ChildNode = getChild(3, arrayOfCards[i]);
+        let cardTitleText: HTMLElement = getChild(0, text);
+        let cardDescText: ChildNode = getChild(3, text).childNodes[1];
         cardTitleText.nodeValue = cards[i].Title;
         cardDescText.nodeValue = cards[i].Description;
-        if (cards[i]['image'] === "null") 
+        if (cards[i]['image'] === "null") {
+            delete cards[i];
             continue;
-        let image: HTMLElement = <HTMLElement>arrayOfCards[i].childNodes[1];
-        image.style.backgroundImage = "url(" + cards[i].Image + ")";
+        }
+        let image: HTMLElement = getChild(1, arrayOfCards[i]);
+        image.style.backgroundImage = `url(${cards[i].Image})`;
         delete cards[i];
     }
+
     cardNode.remove();
     refreshText();
 }
 
 function refreshText(): void {
-    for (let i: number = 0; i < randomText.length; i++) {
-        let contentChild: ChildNode = content.childNodes[3].childNodes[0];
-        contentChild.nodeValue = randomText[Math.floor(Math.random() * 3)];
-    }
+    let contentChild: ChildNode = content.childNodes[3].childNodes[0];
+    contentChild.nodeValue = randomText[Math.ceil(Math.random() * 3)];
 }
 
-function addCards(node: HTMLElement, clone: boolean = true): void {
-    if (clone) {
-        arrayOfCards.push(<HTMLElement>node.cloneNode(true));
-        return;
-    }
-    arrayOfCards.push(node);
-}
 
-function visible(target: string, active: boolean) {
-    let x: HTMLElement = document.getElementById(target);
-    if (active) {
-        x.style.display = 'block';
-        return;
-    }
-    x.style.display = 'none';
+function addCards(node: HTMLElement): void {
+    arrayOfCards.push(<HTMLElement>node.cloneNode(true));
 }
 
 
 function toggleButton(): void {
-    const toggle: Element = document.getElementsByClassName('togglebutton')[0];
-    const navbarLinks: Element = document.getElementsByClassName('navbar-links')[0];
+    const toggle: Element = getNodeElement('togglebutton', 0);
+    const navbarLinks: Element = getNodeElement('navbar-links', 0);
 
     toggle.addEventListener('click', (): void => {
         navbarLinks.classList.toggle('active');
     });
 }
 
-function addHoverScroller(button: string, dest: string): void {
-    document.getElementById(button).addEventListener('click', (): void => {
-        document.getElementById(dest).scrollIntoView({ behavior: 'smooth'})
+
+function addHoverScroller(button: string, dest: Destinations): void {
+    getNodeByID(button).addEventListener('click', (): void => {
+        getNodeByID(`Dest_${dest}`).scrollIntoView({ behavior: 'smooth'})
     })
 }
 

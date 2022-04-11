@@ -4,20 +4,19 @@ interface ICard {
     image: string
 }
 
-class Card  {
-
-    private name: string
+class Card {
+    private title: string
     private description: string
     private image: string
 
     constructor(attr: ICard) {
-        this.name = attr.title;
+        this.title = attr.title;
         this.description = attr.description;
         this.image = attr.image;
     }
 
     public get Title() {
-        return this.name;
+        return this.title;
     }
 
     public get Description() {
