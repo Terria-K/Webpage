@@ -1,0 +1,14 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "compileOnSave": true,
+    "compilerOptions": {
+        "module": "system",
+        "noImplicitAny": true,
+        "removeComments": true,
+        "preserveConstEnums": true,
+        "outFile": "gen/aclc.js",
+        "sourceMap": true,
+        "target": "es6"
+    },
+    "include": ["src/**/*", "writeable/**/*", "main.ts"]
+}

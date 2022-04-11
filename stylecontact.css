@@ -14,8 +14,7 @@
 }
 
 .textcontainer p {
-    position: absolute;
-    margin: 80px 45%;
+    position: relative;
     text-align: center;
     text-transform: uppercase;
 }

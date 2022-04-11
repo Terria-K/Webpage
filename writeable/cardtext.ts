@@ -1,5 +1,5 @@
 // Pede ninyong ibahin itong title and description ng card kung may naisip kayo, nasa correct order ito.
-const cards = [
+const cards: Card[] = [
     new Card({
         "title": "Online Student Enrollment System and Payment System",
         "description": "GREAT NEWS! You may now pay your tuition and other fees online. Pay via credit card, online banking, 7-Eleven, Cebuana, SM Bills payment and other safe and convenient payment methods.",
@@ -16,3 +16,4 @@ const cards = [
         "image": "null"
     })
 ]
+
