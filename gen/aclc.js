@@ -1,4 +1,25 @@
 "use strict";
+const openLink = (url) => {
+    window.open(url);
+};
+const openACLC = () => {
+    if (confirm("You will be redirected to ACLC Malolos Official's Facebook page"))
+        openLink("https://www.facebook.com/ACLCMalolosOfficial");
+};
+const getNodeElements = (className) => document.getElementsByClassName(className);
+const getNodeElement = (className, idx) => getNodeElements(className)[idx];
+const getNodeByID = (id) => document.getElementById(id);
+const getChild = (idx, node) => node.childNodes[idx];
+const visible = (target, active) => {
+    let x = getNodeByID(target);
+    x.style.display = active ? 'block' : 'none';
+};
+const loop = (iterations, block) => {
+    for (let i = 0; i < iterations; i++) {
+        block(i);
+    }
+};
+const clamp = (value, min, max) => value > max ? max : value < min ? min : value;
 class Card {
     constructor(attr) {
         this.title = attr.title;
@@ -15,21 +36,6 @@ class Card {
         return this.image;
     }
 }
-const openLink = (url) => {
-    window.open(url);
-};
-const openACLC = () => {
-    if (confirm("You will be redirected to ACLC Malolos Official's Facebook page"))
-        openLink("https://www.facebook.com/ACLCMalolosOfficial");
-};
-const getNodeElements = (className) => document.getElementsByClassName(className);
-const getNodeElement = (className, idx) => getNodeElements(className)[idx];
-const getNodeByID = (id) => document.getElementById(id);
-const getChild = (idx, node) => node.childNodes[idx];
-const visible = (target, active) => {
-    let x = getNodeByID(target);
-    x.style.display = active ? 'block' : 'none';
-};
 const cards = [
     new Card({
         "title": "Enrollment Ongoing for College",
@@ -52,23 +58,25 @@ const randomText = [
     "Online Learning for College and Senior High School",
     "DepEd voucher accepted for Senior High School"
 ];
-const arrayOfCards = [];
-const content = getNodeByID('content-id');
 var Destinations;
 (function (Destinations) {
     Destinations["Contact"] = "Contact";
     Destinations["Home"] = "Home";
     Destinations["About"] = "About";
 })(Destinations || (Destinations = {}));
+const arrayOfCards = [];
+const content = getNodeByID('content-id');
+const destinations = [
+    ['contact', Destinations.Contact],
+    ['home', Destinations.Home],
+    ['about', Destinations.About],
+    ['homelogo', Destinations.Home]
+];
 function main() {
     const cardNode = getNodeByID('childcontainer');
     const container = getNodeByID('container');
-    addHoverScroller('contact', Destinations.Contact);
-    addHoverScroller('home', Destinations.Home);
-    addHoverScroller('about', Destinations.About);
-    addHoverScroller('homelogo', Destinations.Home);
-    toggleButton();
-    for (let i = 0; i < cards.length; i++) {
+    connectButtonEvents();
+    loop(cards.length, i => {
         addCards(cardNode);
         container.appendChild(arrayOfCards[i]);
         let text = getChild(3, arrayOfCards[i]);
@@ -76,25 +84,34 @@ function main() {
         let cardDescText = getChild(3, text).childNodes[1];
         cardTitleText.nodeValue = cards[i].Title;
         cardDescText.nodeValue = cards[i].Description;
-        if (cards[i]['image'] === "null") {
+        if (cards[i].Image === "null") {
             delete cards[i];
-            continue;
+            return;
         }
         let image = getChild(1, arrayOfCards[i]);
         image.style.backgroundImage = `url(${cards[i].Image})`;
         delete cards[i];
-    }
+    });
     cardNode.remove();
     refreshText();
 }
 function refreshText() {
     let contentChild = content.childNodes[3].childNodes[0];
-    contentChild.nodeValue = randomText[Math.ceil(Math.random() * 3)];
+    contentChild.nodeValue = randomText[Math.ceil(Math.random() * 3 - 1)];
 }
 function addCards(node) {
     arrayOfCards.push(node.cloneNode(true));
 }
-function toggleButton() {
+function connectButtonEvents() {
+    const enrollButton = getNodeByID('enrollbutton');
+    const exitenrollButton = getNodeByID('exitenrollbutton');
+    enrollButton.onclick = () => visible('log', true);
+    exitenrollButton.onclick = () => visible('log', false);
+    const arrowLeftButton = getNodeElement('arrowleft', 0);
+    const arrowRightButton = getNodeElement('arrowright', 0);
+    loop(destinations.length, i => {
+        addHoverScroller(destinations[i][0], destinations[i][1]);
+    });
     const toggle = getNodeElement('togglebutton', 0);
     const navbarLinks = getNodeElement('navbar-links', 0);
     toggle.addEventListener('click', () => {

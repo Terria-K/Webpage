@@ -113,7 +113,9 @@
     display: none;
     width: 320px;
     height: 420px;
-    background: #000;
+    background: rgb(46, 47, 51);
+    backdrop-filter: blur(8px);
+    background-color: rgba(0, 0, 0, 0.8);
     color: #fff;
     top: 50%;
     left: 50%;
@@ -122,6 +124,9 @@
     box-sizing: border-box;
     padding: 50px 35px;
     z-index: 9;
+    border: 5px solid;
+    border-image-slice: 1;
+    border-image-source: linear-gradient(to left, #291f97, #55aaff);
 }
 
 .exit {
@@ -175,7 +180,7 @@
     border: none;
     outline: none;
     height: 40px;
-    background: #fb2525;
+    background: #6193fb;
     color: #fff;
     font-size: 18px;
     border-radius: 20px;
@@ -183,7 +188,7 @@
 
 .loginform input[type="submit"]:hover {    
     cursor: pointer;
-    background: #ffc107;
+    background: #07b5ff;
     color: #000;
 }
 
@@ -199,20 +204,28 @@
 }
 
 .about {
-    color: white;
-    background-color: rgb(35, 35, 118);
+    background-color: rgb(255, 255, 255);
     height: 600px;
     position: relative;
 }
 
-.title {
+.about-content h {
     text-transform: uppercase;
     position: absolute;
     text-align: center;
-    color: white;
+    color: rgb(118, 118, 118);
     font-weight: bold;
     font-size: 30px;
     margin: 60px 44%
+}
+
+.about-content p {
+    text-transform: uppercase;
+    position: absolute;
+    text-align: left;
+    color: rgb(118, 118, 118);
+    font-size: 28px;
+    margin: 120px 5%
 }
 
 .content {
@@ -302,6 +315,41 @@ footer {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+}
+
+.button-container {
+    justify-content: center;
+    position: relative;
+    display: flex;
+    margin-top: -180px;
+}
+
+.arrowleft {
+    cursor: pointer;
+    margin-top: 180px;
+    margin-right: 120px;
+    width: 96px;
+    height: 96px;
+    background-size: cover;
+    background-image: url('assets/next.webp');
+    transform: scaleX(-1);
+}
+
+.arrowright {
+    cursor: pointer;
+    margin-top: 180px;
+    width: 96px;
+    height: 96px;
+    background-size: cover;
+    background-image: url('assets/next.webp');
+}
+
+.arrowleft:hover {
+    filter: invert(40%)
+}
+
+.arrowright:hover {
+    filter: invert(40%)
 }
 
 .card {

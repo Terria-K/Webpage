@@ -30,7 +30,7 @@
             <h1>ACLC COLLEGE</h1>
             <p id="textfade">Be</p>
             <div>
-                <button type="button" onclick="visible('log', true)"><span></span>Enroll Now</button>
+                <button type="button" id="enrollbutton"><span></span>Enroll Now</button>
                 <button type="button"><span></span>Pre-Register</button>
             </div>
         </div>
@@ -38,7 +38,7 @@
     <div class="loginform" id="log">
         <img src="assets/avatar.webp" class="avatar"/>
             <div class="exit">
-                <button onclick="visible('log', false)">x</button>
+                <button id="exitenrollbutton">x</button>
             </div>
             <h1>Login Here</h1>
             <form>
@@ -59,14 +59,12 @@
         </div>
     <footer>
         <div class="about" id="Dest_About">
-            <div class="title">
-                About
+            <div class="about-content">
+                <h>About</h>
+                <p>What is ACLC?</p>
             </div>
         </div>
         <div class="grid-container" id="container">
-            <div class="arrowleft">
-                Left
-            </div>
             <div class="card" id="childcontainer">
                 <div class="card-image"></div>
                 <div class="card-text">Title Card Here
@@ -74,8 +72,13 @@
                     <p1><br/>Lorem Ipsum</p1>
                 </div>
             </div>
+        </div>
+        <div class="button-container">
+            <div class="arrowleft">
+                
+            </div>
             <div class="arrowright">
-                Right
+                
             </div>
         </div>
         <div class="panel">
