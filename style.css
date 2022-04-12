@@ -205,7 +205,7 @@
 
 .about {
     background-color: rgb(255, 255, 255);
-    height: 600px;
+    height: 680px;
     position: relative;
 }
 
@@ -224,28 +224,31 @@
     justify-content: center;
     display: flex;
     text-transform: uppercase;
-    position: absolute;
+    position: relative;
     width: 14.9%;
     text-align: center;
     color: rgb(118, 118, 118);
     font-weight: bold;
     font-size: 28px;
-    margin: 60px 44%
+    margin: 60px 44%;
 }
 
 .about-content p {
     text-transform: uppercase;
-    position: absolute;
+    position: relative;
     color: rgb(118, 118, 118);
     font-size: 24px;
-    margin: 140px 5%
+    margin: 50px
 }
 
 .about-content p1 {
-    position: absolute;
+    position: relative;
     color: rgb(118, 118, 118);
     font-size: 17px;
-    margin: 180px 5%
+    margin: 0px 50px;
+    padding-left: 10px;
+    text-align: center;
+    display: inline-flex;
 }
 
 .content {
@@ -331,6 +334,7 @@ footer {
 
 
 .grid-container {
+    padding-top: 80px;
     position: relative;
     display: flex;
     justify-content: center;
@@ -345,6 +349,7 @@ footer {
 }
 
 .arrowleft {
+    filter: invert(10%);
     cursor: pointer;
     margin-top: 180px;
     margin-right: 120px;
@@ -356,6 +361,7 @@ footer {
 }
 
 .arrowright {
+    filter: invert(10%);
     cursor: pointer;
     margin-top: 180px;
     width: 96px;
