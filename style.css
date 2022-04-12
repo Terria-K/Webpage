@@ -209,23 +209,43 @@
     position: relative;
 }
 
+.video-container {
+    display: flex;
+    justify-content: center;
+}
+
+.video-container iframe {
+    margin-top: 20px;
+    border: 2px solid rgb(130, 130, 130);
+    border-radius: 30px;
+}
+
 .about-content h {
+    justify-content: center;
+    display: flex;
     text-transform: uppercase;
     position: absolute;
+    width: 14.9%;
     text-align: center;
     color: rgb(118, 118, 118);
     font-weight: bold;
-    font-size: 30px;
+    font-size: 28px;
     margin: 60px 44%
 }
 
 .about-content p {
     text-transform: uppercase;
     position: absolute;
-    text-align: left;
     color: rgb(118, 118, 118);
-    font-size: 28px;
-    margin: 120px 5%
+    font-size: 24px;
+    margin: 140px 5%
+}
+
+.about-content p1 {
+    position: absolute;
+    color: rgb(118, 118, 118);
+    font-size: 17px;
+    margin: 180px 5%
 }
 
 .content {

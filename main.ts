@@ -16,24 +16,11 @@ const destinations: string[][] = [
 
 function main(): void {
     const cardNode: HTMLElement = getNodeByID('childcontainer');
-    const container: HTMLElement = getNodeByID('container');
 
     connectButtonEvents();
 
     loop(cards.length, i => {
-        addCards(cardNode);
-        container.appendChild(arrayOfCards[i]);
-        let text: ChildNode = getChild(3, arrayOfCards[i]);
-        let cardTitleText: HTMLElement = getChild(0, text);
-        let cardDescText: ChildNode = getChild(3, text).childNodes[1];
-        cardTitleText.nodeValue = cards[i].Title;
-        cardDescText.nodeValue = cards[i].Description;
-        if (cards[i].Image === "null") {
-            delete cards[i];
-            return;
-        }
-        let image: HTMLElement = getChild(1, arrayOfCards[i]);
-        image.style.backgroundImage = `url(${cards[i].Image})`;
+        cards[i].addCards(<HTMLElement>cardNode.cloneNode(true));
         delete cards[i];
     });
 
@@ -78,4 +65,5 @@ function addHoverScroller(button: string, dest: Destinations): void {
         getNodeByID(`Dest_${dest}`).scrollIntoView({ behavior: 'smooth'})
     })
 }
+
 main();

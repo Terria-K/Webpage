@@ -20,11 +20,20 @@ const loop = (iterations, block) => {
     }
 };
 const clamp = (value, min, max) => value > max ? max : value < min ? min : value;
-class Card {
+class CardBase {
     constructor(attr) {
         this.title = attr.title;
         this.description = attr.description;
-        this.image = attr.image;
+        this.container = getNodeByID('container');
+    }
+    addCards(node) {
+        this.container.appendChild(node);
+        let text = getChild(3, node);
+        let cardTitleText = getChild(0, text);
+        let cardDescText = getChild(3, text).childNodes[1];
+        cardTitleText.nodeValue = this.Title;
+        cardDescText.nodeValue = this.Description;
+        this.define(node);
     }
     get Title() {
         return this.title;
@@ -32,24 +41,43 @@ class Card {
     get Description() {
         return this.description;
     }
+}
+class ImageCard extends CardBase {
+    constructor(attr) {
+        super(attr.card);
+        this.image = attr.image;
+    }
+    define(node) {
+        if (this.Image === "null") {
+            return;
+        }
+        let image = getChild(1, node);
+        image.style.backgroundImage = `url(${this.Image})`;
+    }
     get Image() {
         return this.image;
     }
 }
 const cards = [
-    new Card({
-        "title": "Enrollment Ongoing for College",
-        "description": "New Students & Transferees Accepted! We will be glad to assist you! Enroll now and be part our Family!",
+    new ImageCard({
+        "card": {
+            "title": "Enrollment Ongoing for College",
+            "description": "New Students & Transferees Accepted! We will be glad to assist you! Enroll now and be part our Family!"
+        },
         "image": "assets/card/card2.png"
     }),
-    new Card({
-        "title": "Online Student Enrollment System and Payment System",
-        "description": "GREAT NEWS! You may now pay your tuition and other fees online. Pay via credit card, online banking, 7-Eleven, Cebuana, SM Bills payment and other safe and convenient payment methods.",
+    new ImageCard({
+        "card": {
+            "title": "Online Student Enrollment System and Payment System",
+            "description": "GREAT NEWS! You may now pay your tuition and other fees online. Pay via credit card, online banking, 7-Eleven, Cebuana, SM Bills payment and other safe and convenient payment methods."
+        },
         "image": "assets/card/card1.jpg"
     }),
-    new Card({
-        "title": "No Title Yet",
-        "description": "No Description Yet",
+    new ImageCard({
+        "card": {
+            "title": "No Title Yet",
+            "description": "No Description Yet",
+        },
         "image": "null"
     })
 ];
@@ -74,22 +102,9 @@ const destinations = [
 ];
 function main() {
     const cardNode = getNodeByID('childcontainer');
-    const container = getNodeByID('container');
     connectButtonEvents();
     loop(cards.length, i => {
-        addCards(cardNode);
-        container.appendChild(arrayOfCards[i]);
-        let text = getChild(3, arrayOfCards[i]);
-        let cardTitleText = getChild(0, text);
-        let cardDescText = getChild(3, text).childNodes[1];
-        cardTitleText.nodeValue = cards[i].Title;
-        cardDescText.nodeValue = cards[i].Description;
-        if (cards[i].Image === "null") {
-            delete cards[i];
-            return;
-        }
-        let image = getChild(1, arrayOfCards[i]);
-        image.style.backgroundImage = `url(${cards[i].Image})`;
+        cards[i].addCards(cardNode.cloneNode(true));
         delete cards[i];
     });
     cardNode.remove();
