@@ -26,11 +26,11 @@ abstract class CardBase {
 
     protected abstract define(node: HTMLElement): void;
 
-    public get Title() {
+    public get Title(): string {
         return this.title;
     }
 
-    public get Description() {
+    public get Description(): string {
         return this.description;
     }
 }

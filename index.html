@@ -10,14 +10,19 @@
     <link rel="stylesheet" href="stylecontact.css"/>
 </head>
 <body>
+    <nav class="floating">
+        <div class="messenger">
+
+        </div>
+    </nav>
     <nav class="navbar">
         <img src="assets/logo.png" class="logo" id="homelogo">
-        <a class="togglebutton">
+        <a class="togglebutton" id="toggle">
             <span class="bar"></span>
             <span class="bar"></span>
             <span class="bar"></span>
         </a>
-        <div class="navbar-links">
+        <div class="navbar-links" id="nvlink">
             <ul>
                 <li><p class="active" id="home">Home</p></li>
                 <li><p id="about">About</p></li>
@@ -62,14 +67,14 @@
             <div class="video-container">
                 <iframe allowfullscreen="" frameborder="0" width="420" height="238" src="https://www.youtube.com/embed/NlxZIU2i2Pk?rel=0&amp;showinfo=0" width="100%"></iframe><br />
             </div>
+        </div>
+        <div class="grid-container" id="container">
             <div class="about-content">
                 <h>About ACLC</h>
                 <p>What is ACLC?</p>
                 <p1> AMA Computer Learning Center (ACLC) is a leading computer training institution in the country offering full 2-year programs and short-term courses. It is focused on producing highly competent and skilled graduates to address the growing needs of the local and international markets. ACLC offers the most complete and up-to-date curriculum to equip students with the necessary skills to pursue an IT career. It also has international affiliations that allow ACLC graduates to get high paying jobs and continuous promotions.
                 </p1>
             </div>
-        </div>
-        <div class="grid-container" id="container">
             <div class="card" id="childcontainer">
                 <div class="card-image"></div>
                 <div class="card-text">Title Card Here
@@ -79,10 +84,10 @@
             </div>
         </div>
         <div class="button-container">
-            <div class="arrowleft">
+            <div class="arrowleft" id="arrowleft">
                 
             </div>
-            <div class="arrowright">
+            <div class="arrowright" id="arrowright">
                 
             </div>
         </div>

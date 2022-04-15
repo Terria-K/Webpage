@@ -11,7 +11,7 @@ class ImageCard extends CardBase {
         this.image = attr.image;
     }
 
-    protected override define(node: HTMLElement) {
+    protected override define(node: HTMLElement): void {
         if (this.Image === "null") {
             return;
         }
@@ -19,7 +19,7 @@ class ImageCard extends CardBase {
         image.style.backgroundImage = `url(${this.Image})`;
     }
 
-    public get Image() {
+    public get Image(): string {
         return this.image;
     }
 }

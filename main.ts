@@ -1,4 +1,10 @@
 // Huwag ninyo tong pakialamin
+type Configure = {
+    readonly buttonName: string
+    readonly onClick: () => void
+}
+
+
 enum Destinations {
     Contact = "Contact",
     Home = "Home",
@@ -17,7 +23,14 @@ const destinations: string[][] = [
 function main(): void {
     const cardNode: HTMLElement = getNodeByID('childcontainer');
 
-    connectButtonEvents();
+    connectButtonEvents([{
+        buttonName: 'enrollbutton',
+        onClick: () => { visible('log', true) }
+    },
+    {
+        buttonName: 'exitenrollbutton',
+        onClick: () => { visible('log', false) }
+    }])
 
     loop(cards.length, i => {
         cards[i].addCards(<HTMLElement>cardNode.cloneNode(true));
@@ -38,21 +51,20 @@ function addCards(node: HTMLElement): void {
     arrayOfCards.push(<HTMLElement>node.cloneNode(true));
 }
 
-
-function connectButtonEvents(): void {
-    const enrollButton: HTMLButtonElement = getNodeByID<HTMLButtonElement>('enrollbutton');
-    const exitenrollButton: HTMLButtonElement = getNodeByID<HTMLButtonElement>('exitenrollbutton');
-    enrollButton.onclick = (): void => visible('log', true);
-    exitenrollButton.onclick = (): void => visible('log', false);
+function connectButtonEvents(config: Configure[]): void {
+    for (let i = 0; i < config.length; i++) {
+        const button: HTMLButtonElement = getNodeByID<HTMLButtonElement>(config[i].buttonName);
+        button.onclick = config[i].onClick;
+    }
     
-    const arrowLeftButton: HTMLButtonElement = getNodeElement<HTMLButtonElement>('arrowleft', 0);
-    const arrowRightButton: HTMLButtonElement = getNodeElement<HTMLButtonElement>('arrowright', 0);
+    const arrowLeftButton: HTMLButtonElement = getNodeByID<HTMLButtonElement>('arrowleft');
+    const arrowRightButton: HTMLButtonElement = getNodeByID<HTMLButtonElement>('arrowright');
 
     loop(destinations.length, i => {
         addHoverScroller(destinations[i][0], <Destinations>destinations[i][1]);
     })
-    const toggle: Element = getNodeElement('togglebutton', 0);
-    const navbarLinks: Element = getNodeElement('navbar-links', 0);
+    const toggle: Element = getNodeByID('toggle');
+    const navbarLinks: Element = getNodeByID('nvlink');
 
     toggle.addEventListener('click', (): void => {
         navbarLinks.classList.toggle('active');
