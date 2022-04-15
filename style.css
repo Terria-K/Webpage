@@ -14,15 +14,23 @@
     z-index: 10;
 }
 
-.messenger {
+.cover {
+    margin-left: 20px;
+    margin-top: 580px;
     cursor: pointer;
-    margin-top: 570px;
-    background-image: url("assets/messenger.png");
-    background-size: cover;
-    background-position: right;
-    justify-content: left;
+    background: #beefff;
+    border-radius: 50%;
     width: 64px;
     height: 64px;
+    background-image: url("assets/messenger.svg");
+    background-size: cover;
+    background-position: -15px;
+    transition: 0.5s;
+}
+
+.cover:hover {
+    filter: invert(100%);
+    background-color: rgb(134, 61, 61);
 }
  
 .banner {
@@ -61,6 +69,7 @@
 
 .navbar-links li {
     list-style: none;
+    transition: 0.5s;
 }
 
 
