@@ -1,22 +1,21 @@
 // Huwag ninyo tong pakialamin
-///<reference path="src/utils.ts"/>
-///<reference path="src/classes/CardBase.ts" />
-///<reference path="src/classes/ImageCard.ts"/>
-///<reference path="src/writeable/cardtext.ts"/>
-///<reference path="src/writeable/contentrandom.ts"/>
 
 namespace ACLC {
+    import cards = Writeable.Cards;
+    import randomText = Writeable.RandomText;
+
     type Configure = {
         readonly buttonName: string
         readonly onClick: () => void
-    }    
+    }
     
+
     enum Destinations {
         Contact = "Contact",
         Home = "Home",
         About = "About"
     }
-    
+
     const content: HTMLElement = getNodeByID('content-id');
     const destinations: Map<string, Destinations> = new Map<string, Destinations>([
         ['contact', Destinations.Contact],
@@ -25,17 +24,16 @@ namespace ACLC {
         ['homelogo', Destinations.Home]
     ])
     
-    
     export function main(): void {
         const cardNode: HTMLElement = getNodeByID('childcontainer');
     
         connectButtonEvents([{
             buttonName: 'enrollbutton',
-            onClick: () => { visible('log', true) }
+            onClick: () => { visible('log', "block") }
         },
         {
             buttonName: 'exitenrollbutton',
-            onClick: () => { visible('log', false) }
+            onClick: () => { visible('log', "none") }
         }])
     
         loop(cards.length, i => {
@@ -77,5 +75,3 @@ namespace ACLC {
         })
     }    
 }
-
-ACLC.main();

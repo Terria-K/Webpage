@@ -1,3 +1,5 @@
+type display = "block" | "none";
+
 const openLink = (url: string): void => {
     window.open(url);
 }
@@ -19,9 +21,9 @@ const getNodeByID = <T extends HTMLElement>(id: string): T =>
 const getChild = <NodeHTML extends ChildNode>(idx: number, node: Node): NodeHTML =>
     <NodeHTML>node.childNodes[idx];
 
-const visible = (target: string, active: boolean): void => {
+const visible = (target: string, active: display): void => {
     let x: HTMLElement = getNodeByID(target);
-    x.style.display = active ? 'block' : 'none';
+    x.style.display = active;
 }
 
 const loop = (iterations: number, block: (iter: number) => void): void => {
