@@ -4,7 +4,7 @@ type ImageAttribute = {
 }
 
 class ImageCard extends CardBase {
-    private image: string;
+    private readonly image: string;
 
     constructor(attr: ImageAttribute) {
         super(attr.card);

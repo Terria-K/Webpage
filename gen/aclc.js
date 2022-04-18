@@ -108,12 +108,12 @@ var Destinations;
 })(Destinations || (Destinations = {}));
 const arrayOfCards = [];
 const content = getNodeByID('content-id');
-const destinations = [
+const destinations = new Map([
     ['contact', Destinations.Contact],
     ['home', Destinations.Home],
     ['about', Destinations.About],
     ['homelogo', Destinations.Home]
-];
+]);
 function main() {
     const cardNode = getNodeByID('childcontainer');
     connectButtonEvents([{
@@ -143,11 +143,9 @@ function connectButtonEvents(config) {
         const button = getNodeByID(config[i].buttonName);
         button.onclick = config[i].onClick;
     }
-    const arrowLeftButton = getNodeByID('arrowleft');
-    const arrowRightButton = getNodeByID('arrowright');
-    loop(destinations.length, i => {
-        addHoverScroller(destinations[i][0], destinations[i][1]);
-    });
+    for (let entry of destinations.entries()) {
+        addHoverScroller(entry[0], entry[1]);
+    }
     const toggle = getNodeByID('toggle');
     const navbarLinks = getNodeByID('nvlink');
     toggle.addEventListener('click', () => {

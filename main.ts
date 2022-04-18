@@ -11,14 +11,16 @@ enum Destinations {
     About = "About"
 }
 
+
 const arrayOfCards: HTMLElement[] = [];
 const content: HTMLElement = getNodeByID('content-id');
-const destinations: string[][] = [
+const destinations: Map<string, Destinations> = new Map<string, Destinations>([
     ['contact', Destinations.Contact],
     ['home', Destinations.Home],
     ['about', Destinations.About],
     ['homelogo', Destinations.Home]
-]
+])
+
 
 function main(): void {
     const cardNode: HTMLElement = getNodeByID('childcontainer');
@@ -56,13 +58,11 @@ function connectButtonEvents(config: Configure[]): void {
         const button: HTMLButtonElement = getNodeByID<HTMLButtonElement>(config[i].buttonName);
         button.onclick = config[i].onClick;
     }
-    
-    const arrowLeftButton: HTMLButtonElement = getNodeByID<HTMLButtonElement>('arrowleft');
-    const arrowRightButton: HTMLButtonElement = getNodeByID<HTMLButtonElement>('arrowright');
 
-    loop(destinations.length, i => {
-        addHoverScroller(destinations[i][0], <Destinations>destinations[i][1]);
-    })
+    for (let entry of destinations.entries()) {
+        addHoverScroller(entry[0], entry[1]);
+    }   
+
     const toggle: Element = getNodeByID('toggle');
     const navbarLinks: Element = getNodeByID('nvlink');
 

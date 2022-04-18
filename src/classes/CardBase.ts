@@ -4,9 +4,9 @@ type CardAttribute = {
 }
 
 abstract class CardBase {
-    private title: string
-    private description: string
-    private container: HTMLElement
+    private readonly title: string
+    private readonly description: string
+    private readonly container: HTMLElement
 
     constructor(attr: CardAttribute) {
         this.title = attr.title;

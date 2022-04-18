@@ -371,52 +371,12 @@ footer {
     flex-wrap: wrap;
 }
 
-/* .button-container {
-    justify-content: center;
-    position: relative;
-    display: flex;
-    margin-top: -180px;
-    display: none;
-}
-
-.arrowleft {
-    filter: invert(10%);
-    cursor: pointer;
-    margin-top: 0px;
-    margin-right: 80%;
-    width: 96px;
-    height: 96px;
-    background-size: cover;
-    background-image: url('assets/next.webp');
-    transform: scaleX(-1);
-    display: none;
-}
-
-.arrowright {
-    filter: invert(10%);
-    cursor: pointer;
-    margin-top: 0px;
-    width: 96px;
-    height: 96px;
-    background-size: cover;
-    background-image: url('assets/next.webp');
-    display: none;
-} */
-
-.arrowleft:hover {
-    filter: invert(40%)
-}
-
-.arrowright:hover {
-    filter: invert(40%)
-}
-
 .card {
     position: relative;
     width: 300px;
     height: 430px;
-    border: 1px solid rgb(153, 153, 153);
-    margin: 20px;
+    border: 1px solid rgba(153, 153, 153, 0.296);
+    margin: 20px;   
     
 }
 
