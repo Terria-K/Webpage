@@ -30,6 +30,5 @@ const loop = (iterations: number, block: (iter: number) => void): void => {
     }
 }
 
-const clamp = (value: number, min: number, max: number): number => 
-    value > max ? max : value < min ? min : value;
+const clamp = (value: number, min: number, max: number): number => value > max ? max : value < min ? min : value;
 

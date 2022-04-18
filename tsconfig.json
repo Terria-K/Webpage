@@ -10,5 +10,5 @@
         "target": "es6",
         "strict": true
     },
-    "include": ["src/**/*", "main.ts"]
+    "include": ["main.ts"]
 }

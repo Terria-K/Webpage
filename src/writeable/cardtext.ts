@@ -33,7 +33,7 @@ const cards: CardBase[] = [
             title: "",
             description: ""
         },
-        image: ""
+        image: "null"
     })
 ]
 

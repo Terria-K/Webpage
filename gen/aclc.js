@@ -92,7 +92,7 @@ const cards = [
             title: "",
             description: ""
         },
-        image: ""
+        image: "null"
     })
 ];
 const randomText = [
@@ -100,61 +100,61 @@ const randomText = [
     "Online Learning for College and Senior High School",
     "DepEd voucher accepted for Senior High School"
 ];
-var Destinations;
-(function (Destinations) {
-    Destinations["Contact"] = "Contact";
-    Destinations["Home"] = "Home";
-    Destinations["About"] = "About";
-})(Destinations || (Destinations = {}));
-const arrayOfCards = [];
-const content = getNodeByID('content-id');
-const destinations = new Map([
-    ['contact', Destinations.Contact],
-    ['home', Destinations.Home],
-    ['about', Destinations.About],
-    ['homelogo', Destinations.Home]
-]);
-function main() {
-    const cardNode = getNodeByID('childcontainer');
-    connectButtonEvents([{
-            buttonName: 'enrollbutton',
-            onClick: () => { visible('log', true); }
-        },
-        {
-            buttonName: 'exitenrollbutton',
-            onClick: () => { visible('log', false); }
-        }]);
-    loop(cards.length, i => {
-        cards[i].addCards(cardNode.cloneNode(true));
-        delete cards[i];
-    });
-    cardNode.remove();
-    refreshText();
-}
-function refreshText() {
-    let contentChild = content.childNodes[3].childNodes[0];
-    contentChild.nodeValue = randomText[Math.ceil(Math.random() * 3 - 1)];
-}
-function addCards(node) {
-    arrayOfCards.push(node.cloneNode(true));
-}
-function connectButtonEvents(config) {
-    for (let i = 0; i < config.length; i++) {
-        const button = getNodeByID(config[i].buttonName);
-        button.onclick = config[i].onClick;
+var ACLC;
+(function (ACLC) {
+    let Destinations;
+    (function (Destinations) {
+        Destinations["Contact"] = "Contact";
+        Destinations["Home"] = "Home";
+        Destinations["About"] = "About";
+    })(Destinations || (Destinations = {}));
+    const content = getNodeByID('content-id');
+    const destinations = new Map([
+        ['contact', Destinations.Contact],
+        ['home', Destinations.Home],
+        ['about', Destinations.About],
+        ['homelogo', Destinations.Home]
+    ]);
+    function main() {
+        const cardNode = getNodeByID('childcontainer');
+        connectButtonEvents([{
+                buttonName: 'enrollbutton',
+                onClick: () => { visible('log', true); }
+            },
+            {
+                buttonName: 'exitenrollbutton',
+                onClick: () => { visible('log', false); }
+            }]);
+        loop(cards.length, i => {
+            cards[i].addCards(cardNode.cloneNode(true));
+            delete cards[i];
+        });
+        cardNode.remove();
+        refreshText();
     }
-    for (let entry of destinations.entries()) {
-        addHoverScroller(entry[0], entry[1]);
+    ACLC.main = main;
+    function refreshText() {
+        let contentChild = content.childNodes[3].childNodes[0];
+        contentChild.nodeValue = randomText[Math.ceil(Math.random() * 3 - 1)];
     }
-    const toggle = getNodeByID('toggle');
-    const navbarLinks = getNodeByID('nvlink');
-    toggle.addEventListener('click', () => {
-        navbarLinks.classList.toggle('active');
-    });
-}
-function addHoverScroller(button, dest) {
-    getNodeByID(button).addEventListener('click', () => {
-        getNodeByID(`Dest_${dest}`).scrollIntoView({ behavior: 'smooth' });
-    });
-}
-main();
+    function connectButtonEvents(config) {
+        for (let i = 0; i < config.length; i++) {
+            const button = getNodeByID(config[i].buttonName);
+            button.onclick = config[i].onClick;
+        }
+        for (let entry of destinations.entries()) {
+            addHoverScroller(entry[0], entry[1]);
+        }
+        const toggle = getNodeByID('toggle');
+        const navbarLinks = getNodeByID('nvlink');
+        toggle.addEventListener('click', () => {
+            navbarLinks.classList.toggle('active');
+        });
+    }
+    function addHoverScroller(button, dest) {
+        getNodeByID(button).addEventListener('click', () => {
+            getNodeByID(`Dest_${dest}`).scrollIntoView({ behavior: 'smooth' });
+        });
+    }
+})(ACLC || (ACLC = {}));
+ACLC.main();
