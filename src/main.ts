@@ -9,7 +9,6 @@ namespace ACLC {
         readonly onClick: () => void
     }
     
-
     const enum Destinations {
         Contact = "Contact",
         Home = "Home",

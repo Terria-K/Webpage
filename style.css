@@ -18,19 +18,20 @@
     margin-left: 20px;
     margin-top: 580px;
     cursor: pointer;
-    background: #beefff;
+    background-color: rgb(134, 61, 61);
     border-radius: 50%;
     width: 64px;
     height: 64px;
     background-image: url("assets/messenger.svg");
     background-size: cover;
     background-position: -15px;
-    transition: 0.5s;
+    transition: 0.4s;
+    filter: invert(100%);
 }
 
 .cover:hover {
-    filter: invert(100%);
-    background-color: rgb(134, 61, 61);
+    filter: invert(0%);
+    background-color: #beefff;
 }
  
 .banner {
@@ -102,38 +103,6 @@
     width: 100%;
     background-color: white;
     border-radius: 10px;
-}
-
-@media (max-width: 600px) {
-    .togglebutton {
-        display: flex;
-    }
-    .navbar-links {
-        display: none;
-        width: 100%;
-    }
-
-    .navbar {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .navbar-links ul {
-        width: 100%;
-        flex-direction: column;
-    }
-
-    .navbar-links li {
-        text-align: center;
-    }
-
-    .navbar-links li a {
-        padding: .5rem 1rem;
-    }
-
-    .navbar-links.active {
-        display: flex;
-    }
 }
 
 .loginform {
@@ -442,16 +411,17 @@ footer {
 }
 
 .trademark {
-    height: 100px;
+    height: 120px;
     width: 100%;
     position: absolute;
     display: flex;
-    justify-content: right;
+    justify-content: left;
     background-color: rgb(32, 31, 31);    
 }
 
 .trademark p {
-    margin: 40px;
+    text-align: center;
+    margin: 53px 120px;
     color: rgb(74, 74, 74);
 }
 
@@ -470,4 +440,41 @@ footer {
     animation-name: text;
     animation-duration: 0.8s;
     animation-timing-function: ease-in-out;
+}
+
+
+@media (max-width: 600px) {
+    .togglebutton {
+        display: flex;
+    }
+    .navbar-links {
+        display: none;
+        width: 100%;
+    }
+
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .navbar-links ul {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .navbar-links li {
+        text-align: center;
+    }
+
+    .navbar-links li a {
+        padding: .5rem 1rem;
+    }
+
+    .navbar-links.active {
+        display: flex;
+    }
+
+    .trademark p {
+        margin: 40px 120px;
+    }    
 }
