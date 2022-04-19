@@ -48,11 +48,14 @@ class ImageCard extends CardBase {
         this.image = attr.image;
     }
     define(node) {
-        if (this.Image === "null") {
+        if (this.isNullOrEmpty(this.Image)) {
             return;
         }
         let image = getChild(1, node);
         image.style.backgroundImage = `url(${this.Image})`;
+    }
+    isNullOrEmpty(text) {
+        return text === "null" || text === "" || text == null ? true : false;
     }
     get Image() {
         return this.image;
@@ -124,10 +127,10 @@ var ACLC;
     })(Destinations || (Destinations = {}));
     const content = getNodeByID('content-id');
     const destinations = new Map([
-        ['contact', Destinations.Contact],
-        ['home', Destinations.Home],
-        ['about', Destinations.About],
-        ['homelogo', Destinations.Home]
+        ['contact', "Contact"],
+        ['home', "Home"],
+        ['about', "About"],
+        ['homelogo', "Home"]
     ]);
     function main() {
         const cardNode = getNodeByID('childcontainer');
@@ -149,7 +152,8 @@ var ACLC;
     ACLC.main = main;
     function refreshText() {
         let contentChild = content.childNodes[3].childNodes[0];
-        contentChild.nodeValue = randomText[Math.ceil(Math.random() * 3 - 1)];
+        let num = Math.random() * 3 - 1;
+        contentChild.nodeValue = randomText[Math.ceil(num)];
     }
     function connectButtonEvents(config) {
         for (let i = 0; i < config.length; i++) {

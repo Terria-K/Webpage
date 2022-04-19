@@ -10,7 +10,7 @@ namespace ACLC {
     }
     
 
-    enum Destinations {
+    const enum Destinations {
         Contact = "Contact",
         Home = "Home",
         About = "About"
@@ -47,7 +47,8 @@ namespace ACLC {
     
     function refreshText(): void {
         let contentChild: ChildNode = content.childNodes[3].childNodes[0];
-        contentChild.nodeValue = randomText[Math.ceil(Math.random() * 3 - 1)];
+        let num: number = Math.random() * 3 - 1;
+        contentChild.nodeValue = randomText[Math.ceil(num)];
     }
     
     function connectButtonEvents(config: Configure[]): void {
@@ -73,5 +74,5 @@ namespace ACLC {
         getNodeByID(button).addEventListener('click', (): void => {
             getNodeByID(`Dest_${dest}`).scrollIntoView({ behavior: 'smooth'})
         })
-    }    
+    }
 }

@@ -8,7 +8,7 @@ abstract class CardBase {
     private readonly description: string
     private readonly container: HTMLElement
 
-    constructor(attr: CardAttribute) {
+    protected constructor(attr: CardAttribute) {
         this.title = attr.title;
         this.description = attr.description;
         this.container = getNodeByID('container');
