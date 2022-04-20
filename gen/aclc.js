@@ -1,25 +1,35 @@
 "use strict";
-const openLink = (url) => {
+function openLink(url) {
     window.open(url);
-};
-const openACLC = () => {
+}
+function openACLC() {
     if (confirm("You will be redirected to ACLC Malolos Official's Facebook page"))
         openLink("https://www.facebook.com/ACLCMalolosOfficial");
-};
-const getNodeElements = (className) => document.getElementsByClassName(className);
-const getNodeElement = (className, idx) => getNodeElements(className)[idx];
-const getNodeByID = (id) => document.getElementById(id);
-const getChild = (idx, node) => node.childNodes[idx];
-const visible = (target, active) => {
+}
+function getNodeElements(className) {
+    return document.getElementsByClassName(className);
+}
+function getNodeElement(className, idx) {
+    return getNodeElements(className)[idx];
+}
+function getNodeByID(id) {
+    return document.getElementById(id);
+}
+function getChild(idx, node) {
+    return node.childNodes[idx];
+}
+function visible(target, active) {
     let x = getNodeByID(target);
     x.style.display = active;
-};
-const loop = (iterations, block) => {
+}
+function loop(iterations, block) {
     for (let i = 0; i < iterations; i++) {
         block(i);
     }
-};
-const clamp = (value, min, max) => value > max ? max : value < min ? min : value;
+}
+function clamp(value, min, max) {
+    return value > max ? max : value < min ? min : value;
+}
 class CardBase {
     constructor(attr) {
         this.title = attr.title;

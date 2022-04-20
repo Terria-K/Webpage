@@ -14,7 +14,6 @@ namespace ACLC {
         Home = "Home",
         About = "About"
     }
-
     const content: HTMLElement = getNodeByID('content-id');
     const destinations: Map<string, Destinations> = new Map<string, Destinations>([
         ['contact', Destinations.Contact],
