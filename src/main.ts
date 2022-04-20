@@ -32,8 +32,12 @@ namespace ACLC {
         {
             buttonName: 'exitenrollbutton',
             onClick: () => { visible('log', "none") }
+        }, 
+        {
+            buttonName: 'messenger-button',
+            onClick: () => { visible('mess', getNodeByID("mess").style.display == "block" ? "none" : "block")}
         }])
-    
+
         loop(cards.length, i => {
             cards[i].addCards(<HTMLElement>cardNode.cloneNode(true));
             delete cards[i];
@@ -52,6 +56,7 @@ namespace ACLC {
     function connectButtonEvents(config: Configure[]): void {
         for (let i = 0; i < config.length; i++) {
             const button: HTMLButtonElement = getNodeByID(config[i].buttonName);
+            console.log(button);
             button.onclick = config[i].onClick;
         }
     

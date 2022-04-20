@@ -151,6 +151,10 @@ var ACLC;
             {
                 buttonName: 'exitenrollbutton',
                 onClick: () => { visible('log', "none"); }
+            },
+            {
+                buttonName: 'messenger-button',
+                onClick: () => { visible('mess', getNodeByID("mess").style.display == "block" ? "none" : "block"); }
             }]);
         loop(cards.length, i => {
             cards[i].addCards(cardNode.cloneNode(true));
@@ -168,6 +172,7 @@ var ACLC;
     function connectButtonEvents(config) {
         for (let i = 0; i < config.length; i++) {
             const button = getNodeByID(config[i].buttonName);
+            console.log(button);
             button.onclick = config[i].onClick;
         }
         for (let entry of destinations.entries()) {
